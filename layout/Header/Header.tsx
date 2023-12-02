@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable react/no-unused-prop-types */
 import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -8,25 +11,21 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+
 import * as React from "react";
 
 import { useAppDispatch } from "@/hooks/useAppDispatch";
 import { useAppSelector } from "@/hooks/useAppSelector";
+import assest from "@/json/assest";
 import { logout } from "@/reduxtoolkit/slices/userSlice";
-import styles from "@/styles/layout/header.module.scss";
-import dynamic from "next/dynamic";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import styled from "@emotion/styled";
+import { HeaderWrap } from "@/styles/StyledComponents/HeaderWrap";
+import CustomButtonPrimary from "@/ui/CustomButtons/CustomButtonPrimary";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
 import Image from "next/image";
-import assest from "@/json/assest";
-import CustomButtonOutline from "@/ui/Buttons/CustomButtonOutline";
-import { Button } from "@mui/material";
-
-const CustomButton = dynamic(() => import("@/ui/Buttons/CustomButton"));
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface Props {
   /**
@@ -38,75 +37,28 @@ interface Props {
 
 const drawerWidth = 240;
 
-const HeaderWrap = styled(Box)`
-background: var(--white);
-box-shadow: 0px 4px 58px rgba(0, 0, 0, 0.07);
-.MuiToolbar-root {
-  min-height: auto;
-}
-.hdr_rgt {
-  margin-left: 18px;
-}
-
-  .headerContainer {
-    background-color: transparent !important;
-    padding: 20px 0;
-    transition: all 0.4s;
-  }
-
-  .headerLogo {
-    width: 250px;
-    display: inline-block;
-    transition: all 0.4s;
-  }
-  .navbar {
-    margin-left: auto;
-    a {
-      margin-right: 30px;
-      display: inline-block;
-      color: var(--black);
-      &:hover {
-        color: var(--color0000FF);
-      }
-      &:last-child {
-        margin-right: 0;
-      }
-      &:first-child {
-        margin-left: 0;
-      }
-      &.active {
-        color: var(--color0000FF);
-      }
-    }
-  }
-`;
-
 export default function Header(props: Props) {
   const navItems = [
     {
-      name: "Home",
-      route: "/",
+      name: "Products",
+      route: "/product"
     },
     {
-      name: "Superchargers",
-      route: "/superchargers",
+      name: "Resources",
+      route: "/resource"
     },
     {
-      name: "Hosts",
-      route: "/hosts",
+      name: "Company",
+      route: "/hosts"
     },
     {
-      name: "Leasing Agents",
-      route: "/leasingagents",
+      name: "Pricing",
+      route: "/leasingagents"
     },
     {
-      name: "EV Drivers",
-      route: "/drivers",
-    },
-    {
-      name: "About Us",
-      route: "/about",
-    },
+      name: "More",
+      route: "/drivers"
+    }
   ];
 
   // const { window } = props;
@@ -147,27 +99,30 @@ export default function Header(props: Props) {
   // const container =
   //   window !== undefined ? () => window().document.body : undefined;
 
-  //for adding class to header while scroll
-  // const [scroll, setScroll] = React.useState(false);
+  // for adding class to header while scroll
+  const [scroll, setScroll] = React.useState(false);
 
-  // const detectScroll = React.useCallback(() => {
-  //   setScroll(window.scrollY > 100);
-  // }, []);
+  const detectScroll = React.useCallback(() => {
+    setScroll(window.scrollY > 60);
+  }, []);
 
-  // React.useEffect(() => {
-  //   window.addEventListener("scroll", detectScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", detectScroll);
-  //   };
-  // }, []);
+  React.useEffect(() => {
+    window.addEventListener("scroll", detectScroll);
+    return () => {
+      window.removeEventListener("scroll", detectScroll);
+    };
+  }, []);
 
   return (
-    <HeaderWrap sx={{ display: "flex" }} className="main_head">
+    <HeaderWrap
+      sx={{ display: "flex" }}
+      className={scroll ? "fixed_header" : ""}
+    >
       <AppBar
         component="nav"
         position="static"
         elevation={0}
-        className='headerContainer'
+        className="headerContainer"
       >
         <Container fixed className="cus_container">
           <Toolbar>
@@ -181,38 +136,34 @@ export default function Header(props: Props) {
               <MenuIcon />
             </IconButton>
             <Link href="/" className="headerLogo">
-              <Image
-                src={assest.logo_img}
-                width={250}
-                height={38}
-                alt="Logo"
-              />
+              <Image src={assest.logo_img} width={250} height={38} alt="Logo" />
             </Link>
             {isLoggedIn ? (
               <Box
                 sx={{ display: { xs: "none", sm: "block" } }}
                 className="navbar"
               >
-                <CustomButton
+                <CustomButtonPrimary
                   onClick={handleLogout}
                   type="button"
                   variant="text"
                 >
                   <span>Logout</span>
-                </CustomButton>
+                </CustomButtonPrimary>
 
-                <CustomButton type="button" variant="text">
+                <CustomButtonPrimary type="button" variant="text">
                   <span>{userData?.email}</span>
-                </CustomButton>
+                </CustomButtonPrimary>
               </Box>
             ) : (
               <Box
                 sx={{ display: { xs: "none", sm: "block" } }}
                 className="navbar"
               >
-                {navItems.map((item,index) => (
+                {navItems.map((item, index) => (
                   <Link
                     href={item?.route}
+                    // eslint-disable-next-line react/no-array-index-key
                     key={index}
                     className={router.pathname === item.route ? "active" : ""}
                   >
@@ -224,11 +175,20 @@ export default function Header(props: Props) {
               </Box>
             )}
             <Box className="hdr_rgt">
-    
-              <CustomButton type="button">
-                <Typography variant="caption">Become A Host</Typography>
-              </CustomButton>
-            
+              <CustomButtonPrimary
+                variant="contained"
+                color="primary"
+                type="button"
+              >
+                <Typography variant="caption">Login</Typography>
+              </CustomButtonPrimary>
+              <CustomButtonPrimary
+                variant="contained"
+                color="primary"
+                type="button"
+              >
+                <Typography variant="caption">SignUp</Typography>
+              </CustomButtonPrimary>
             </Box>
           </Toolbar>
         </Container>
@@ -239,14 +199,14 @@ export default function Header(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true // Better open performance on mobile.
           }}
           sx={{
             display: { xs: "block", lg: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: drawerWidth,
-            },
+              width: drawerWidth
+            }
           }}
         >
           {drawer}
