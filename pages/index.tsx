@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner/Banner";
+import ProductSec from "@/components/ProductSec/ProductSec";
 import assest from "@/json/assest";
 import { searchList } from "@/json/mock/search.mock";
 import Wrapper from "@/layout/wrapper/Wrapper";
@@ -49,6 +50,7 @@ export default function Home() {
           </figure>
         </Box>
       </Banner>
+      <ProductSec />
     </Wrapper>
   );
 }

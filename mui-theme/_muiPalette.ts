@@ -123,7 +123,8 @@ export const primaryColors = {
   colorE0D8EE: "#E0D8EE",
   checkBlackColor: "#1F2B37",
   colorF9F9F9: "#F9F9F9",
-  btnYlwColor: "#f7e910"
+  btnYlwColor: "#f7e910",
+  cardbg: "rgb(240, 248, 255)"
 };
 
 export const pallete = (mode: PaletteMode): PaletteOptions => {
