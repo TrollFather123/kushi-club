@@ -28,7 +28,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import { Button } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 
 interface Props {
   /**
@@ -48,14 +48,20 @@ export default function Header(props: Props) {
       submenu: [
         {
           linkName: " League Management ",
+          subName: "Software to manage Leagues",
+          icon: assest?.icon1,
+          path: "/league-management"
+        },
+        {
+          linkName: " Live Scoring App ",
+          subName: "Tool for live scores ",
+          icon: assest?.icon2,
           path: "/"
         },
         {
-          linkName: "  Live Stream ",
-          path: "/"
-        },
-        {
-          linkName: " League Management ",
+          linkName: " Live Stream ",
+          subName: "Tool to live stream matches",
+          icon: assest?.icon3,
           path: "/"
         }
       ]
@@ -65,15 +71,21 @@ export default function Header(props: Props) {
       route: "/resource",
       submenu: [
         {
-          linkName: " League Management ",
+          linkName: "Scoring Guide",
+          subName: "",
+          icon: "",
           path: "/"
         },
         {
-          linkName: "  Live Stream ",
+          linkName: "Rank Calculator",
+          subName: "",
+          icon: "",
           path: "/"
         },
         {
-          linkName: " League Management ",
+          linkName: "FAQs",
+          subName: "",
+          icon: "",
           path: "/"
         }
       ]
@@ -207,7 +219,31 @@ export default function Header(props: Props) {
                       >
                         {item.submenu !== undefined &&
                           item.submenu.map((data) => (
-                            <Link href={data.path}>{data.linkName}</Link>
+                            <Stack
+                              direction="row"
+                              alignItems="center"
+                              flexWrap="wrap"
+                              className={
+                                data?.icon ? "each_block" : "each_block no_icon"
+                              }
+                            >
+                              <i>
+                                {data?.icon && (
+                                  <Image
+                                    src={data?.icon}
+                                    alt="icon"
+                                    width={70}
+                                    height={70}
+                                  />
+                                )}
+                              </i>
+                              <Box className="each_block_rgt">
+                                <Link href={data?.path}>{data?.linkName}</Link>
+                                {data?.subName && (
+                                  <Typography>{data?.subName}</Typography>
+                                )}
+                              </Box>
+                            </Stack>
                           ))}
                       </Box>
                     )}

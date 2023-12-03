@@ -1,12 +1,15 @@
+/* eslint-disable import/order */
 /* eslint-disable react/self-closing-comp */
 import assest from "@/json/assest";
-import { primaryColors } from "@/themes/_muiPalette";
+
 import CustomButtonPrimary from "@/ui/CustomButtons/CustomButtonPrimary";
 import styled from "@emotion/styled";
 // eslint-disable-next-line mui-path-imports/mui-path-imports
 import { Box, Container, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
+import DesignTitle from "../DesignTitle/DesignTitle";
+import { primaryColors } from "@/themes/_muiPalette";
 
 export const PeopleWrap = styled(Box)`
   background-image: url(${assest.people_bg});
@@ -16,19 +19,6 @@ export const PeopleWrap = styled(Box)`
   padding: 255px 0 80px 0;
   .people_inr {
     text-align: center;
-    h2 {
-      color: ${primaryColors.white};
-      text-align: center;
-    }
-    .heading-divider {
-      display: inline-block;
-      border: 0;
-      border-top: 3px solid #f47b21;
-      height: 0;
-      width: 60px;
-      margin-bottom: 1.5rem;
-      margin-top: 1rem;
-    }
     p {
       width: 50%;
       margin: 0 auto;
@@ -57,15 +47,13 @@ export default function PeopleSec() {
     <PeopleWrap>
       <Container fixed>
         <Box className="people_inr">
-          <Typography variant="h2">
-            Speak to our people, to know more
-          </Typography>
-          <hr className="heading-divider mb-4"></hr>
-          <Typography variant="body1">
-            For more details on any of our products, pricing or demos you can
-            reach us. Our awesome team is always there to quick response to all
-            your queries
-          </Typography>
+          <DesignTitle title="Speak to our people, to know more" fontsColor={primaryColors.white}>
+            <Typography variant="body1">
+              For more details on any of our products, pricing or demos you can
+              reach us. Our awesome team is always there to quick response to
+              all your queries
+            </Typography>
+          </DesignTitle>
           <Typography variant="body1" className="text2">
             <Link href="/">sales@cricclubs.com</Link>
           </Typography>

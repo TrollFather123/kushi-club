@@ -28,9 +28,16 @@ export const BrandsSecWrap = styled(Box)`
       border: 1px solid rgba(0, 0, 0, 0.125);
       border-radius: 0;
       padding: 1.25rem;
+      transition: all 0.5s ease;
       img {
         max-width: 68px;
         margin: 0 auto;
+      }
+      &:hover {
+        z-index: 80;
+        transform: scale(1.2);
+        border: 1px solid rgba(0, 0, 0, 0.125) !important;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
       }
     }
   }
@@ -100,7 +107,7 @@ export default function BrandsSec() {
     <BrandsSecWrap>
       <Container fixed>
         <Box className="brand_inr">
-          <Typography variant="h2">Cricclubs is used by</Typography>
+          <Typography variant="h2">Kushiclubs is used by</Typography>
           <Grid container spacing={0} className="border">
             {brandImages.map((data) => (
               <Grid item xs={12} md={2} className="card">

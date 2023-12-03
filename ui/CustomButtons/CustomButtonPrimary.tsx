@@ -14,6 +14,11 @@ const CustomButtonWrapper = styled(Button)`
       color: ${primaryColors?.white};
     }
   }
+  &:hover {
+    span {
+      color: ${primaryColors?.white};
+    }
+  }
   &.signUpButton {
     width: 100%;
     padding: 23px 0;
