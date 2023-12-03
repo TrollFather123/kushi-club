@@ -21,6 +21,7 @@ type tablistType = {
 interface InnerCompProps {
   designtitle?: string;
   titleDescription?: string;
+  designTitleBtnTxt?:string;
   tabList: tablistType[];
 }
 
@@ -62,6 +63,7 @@ function a11yProps(index: number) {
 export default function InnerCommonComponent({
   designtitle,
   titleDescription,
+  designTitleBtnTxt,
   tabList
 }: InnerCompProps) {
   const [value, setValue] = React.useState(0);
@@ -71,10 +73,11 @@ export default function InnerCommonComponent({
   };
   return (
     <InnerCommonComponentWrap className="cmn_gap">
-      <DesignTitle title={designtitle!} fontsColor={primaryColors?.black} >
+       <Container fixed>
+      <DesignTitle title={designtitle!} fontsColor={primaryColors?.black} btnTxt={designTitleBtnTxt}>
         <Typography>{titleDescription}</Typography>
       </DesignTitle>
-      <Container fixed>
+     
         <Box className="tab_sec" >
           <Box component={Paper} className="tab_top_wrap">
             <Tabs

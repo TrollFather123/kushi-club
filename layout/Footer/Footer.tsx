@@ -1,3 +1,5 @@
+/* eslint-disable sort-imports */
+/* eslint-disable mui-path-imports/mui-path-imports */
 /* eslint-disable react/jsx-no-useless-fragment */
 import assest from "@/json/assest";
 import styled from "@emotion/styled";
@@ -8,7 +10,7 @@ import { Box } from "@mui/system";
 import Link from "next/link";
 import { List, ListItem, Grid, Typography, Stack } from "@mui/material";
 
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { primaryColors } from "@/themes/_muiPalette";
 
 const FooterWrap = styled(Box)`
@@ -32,6 +34,9 @@ const FooterWrap = styled(Box)`
       a {
         color: ${primaryColors.textPrimaryColor};
         line-height: 200%;
+        &:hover{
+          color: ${primaryColors?.btnYlwColor};
+        }
       }
     }
   }
@@ -71,28 +76,28 @@ const FooterWrap = styled(Box)`
   }
 `;
 
-const navItems = [
-  {
-    name: "home",
-    route: "/"
-  },
-  {
-    name: "About",
-    route: "/about"
-  },
-  {
-    name: "Products",
-    route: "/products"
-  },
-  {
-    name: "Package",
-    route: "/package"
-  },
-  {
-    name: "Contact",
-    route: "/contact"
-  }
-];
+// const navItems = [
+//   {
+//     name: "home",
+//     route: "/"
+//   },
+//   {
+//     name: "About",
+//     route: "/about"
+//   },
+//   {
+//     name: "Products",
+//     route: "/products"
+//   },
+//   {
+//     name: "Package",
+//     route: "/package"
+//   },
+//   {
+//     name: "Contact",
+//     route: "/contact"
+//   }
+// ];
 
 const Footer = () => {
   const navItems = [
@@ -185,7 +190,7 @@ const Footer = () => {
       path: "/"
     }
   ];
-  const router = useRouter();
+  // const router = useRouter();
   return (
     <>
       <FooterWrap>

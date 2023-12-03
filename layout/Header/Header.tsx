@@ -56,14 +56,32 @@ export default function Header(props: Props) {
           linkName: " Live Scoring App ",
           subName: "Tool for live scores ",
           icon: assest?.icon2,
-          path: "/"
+          path: "/live-scoring"
         },
         {
           linkName: " Live Stream ",
           subName: "Tool to live stream matches",
           icon: assest?.icon3,
+          path: "/live-stream"
+        },
+        {
+          linkName: " Custom Apparels/Balls ",
+          subName: "Custom apparel and kits",
+          icon: assest?.icon4,
+          path: "/custom-apparels"
+        },
+        {
+          linkName: " Scoreboard ",
+          subName: "Tool to track scores",
+          icon: assest?.icon5,
+          path: "/scoreboard"
+        },
+        {
+          linkName: " Academy Management ",
+          subName: "Software to manage academies ",
+          icon: assest?.icon6,
           path: "/"
-        }
+        },
       ]
     },
     {

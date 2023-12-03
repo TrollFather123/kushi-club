@@ -15,7 +15,7 @@ export default function Index() {
       <InnerBanner>
         <figure>
           <Image
-            src={assest?.innerbanner1}
+            src={assest?.live_score_img}
             alt="inner banner"
             width={790}
             height={480}
@@ -24,8 +24,8 @@ export default function Index() {
       </InnerBanner>
       <InnerCommonComponent
         tabList={tabContentList}
-        designtitle="League Management"
-        titleDescription="CricClubs league management solution provides all the tools necessary for Cricket administrators to manage their league with ease. With an instant league website, 5-minute tournament setup, match center, automatic points table, comprehensive statistics, mobile app, News, Picture Gallery, Social media integrations and much more, CricClubs puts technology at your finger tips!"
+        designtitle="Live Scoring App"
+        titleDescription="CricClubs best in class mobile app helps to update the scores through iOS/Android or on any PC. The scores get updated in real- time on the league web portal, mobile apps, overlay graphics, LED scoreboard so that players, fans, admins can follow any local game as it takes place live!"
       />
       <StatsSec />
       <ClinetsSec />

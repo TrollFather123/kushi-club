@@ -15,7 +15,7 @@ export default function Index() {
       <InnerBanner>
         <figure>
           <Image
-            src={assest?.innerbanner1}
+            src={assest?.custom_set_img}
             alt="inner banner"
             width={790}
             height={480}
@@ -24,8 +24,9 @@ export default function Index() {
       </InnerBanner>
       <InnerCommonComponent
         tabList={tabContentList}
-        designtitle="League Management"
-        titleDescription="CricClubs league management solution provides all the tools necessary for Cricket administrators to manage their league with ease. With an instant league website, 5-minute tournament setup, match center, automatic points table, comprehensive statistics, mobile app, News, Picture Gallery, Social media integrations and much more, CricClubs puts technology at your finger tips!"
+        designtitle="Custom Apparels / Balls"
+        titleDescription="CricClubs manufactures high-quality customizable uniform kits and various types of Cricket balls at very affordable prices. Who does not love to wear a jersey of their own and playing with their own kit? we heard you and we made this for you. Your team can now don a branded jersey."
+        designTitleBtnTxt="Order Now"
       />
       <StatsSec />
       <ClinetsSec />

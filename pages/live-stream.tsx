@@ -15,7 +15,7 @@ export default function Index() {
       <InnerBanner>
         <figure>
           <Image
-            src={assest?.innerbanner1}
+            src={assest?.live_stream_img}
             alt="inner banner"
             width={790}
             height={480}
@@ -24,8 +24,8 @@ export default function Index() {
       </InnerBanner>
       <InnerCommonComponent
         tabList={tabContentList}
-        designtitle="League Management"
-        titleDescription="CricClubs league management solution provides all the tools necessary for Cricket administrators to manage their league with ease. With an instant league website, 5-minute tournament setup, match center, automatic points table, comprehensive statistics, mobile app, News, Picture Gallery, Social media integrations and much more, CricClubs puts technology at your finger tips!"
+        designtitle="Live Stream"
+        titleDescription="Take your match to the next level! CricClubs experienced production crew will help seamlessly live stream your matches with multiple cameras and 20+ overlay graphics. The live video can be broadcasted to FB/Youtube/website or any broadcasting channel of your choice."
       />
       <StatsSec />
       <ClinetsSec />

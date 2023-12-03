@@ -203,5 +203,24 @@ export const tabContentList = [
         </Typography>
       </TabBodyContent>
     )
+  }
+];
+
+export const StatsList = [
+  {
+    count: "57",
+    title: "Countries"
+  },
+  {
+    count: "16K",
+    title: "Leagues"
+  },
+  {
+    count: "18",
+    title: "NGB's"
+  },
+  {
+    count: "3M",
+    title: "Users"
   },
 ];

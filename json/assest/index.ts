@@ -39,4 +39,9 @@ export default {
   tab6:"/assets/images/tab6.png",
   tab_main_img1:"/assets/images/tab_main_img1.png",
   tab_main_img2:"/assets/images/tab_main_img2.png",
+  stats_bg:"/assets/images/stats_bg.jpg",
+  live_score_img:"/assets/images/live_score_img.png",
+  live_stream_img:"/assets/images/live_stream_img.png",
+  custom_set_img:"/assets/images/custom_set_img.png",
+  scoreboard_img:"/assets/images/scoreboard_img.png"
 };

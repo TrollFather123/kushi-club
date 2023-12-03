@@ -15,7 +15,7 @@ export default function Index() {
       <InnerBanner>
         <figure>
           <Image
-            src={assest?.innerbanner1}
+            src={assest?.scoreboard_img}
             alt="inner banner"
             width={790}
             height={480}
@@ -24,8 +24,8 @@ export default function Index() {
       </InnerBanner>
       <InnerCommonComponent
         tabList={tabContentList}
-        designtitle="League Management"
-        titleDescription="CricClubs league management solution provides all the tools necessary for Cricket administrators to manage their league with ease. With an instant league website, 5-minute tournament setup, match center, automatic points table, comprehensive statistics, mobile app, News, Picture Gallery, Social media integrations and much more, CricClubs puts technology at your finger tips!"
+        designtitle="LED Scoreboard"
+        titleDescription="Score board is a key product on the field for any cricket match. It is not easy for the players and spectators to keep track of scores in any paper or small phones so we have made this unique mini LED score board. This board is robust, mobile and highly power efficient. You can carry it on the field and keep track of your scores."
       />
       <StatsSec />
       <ClinetsSec />
