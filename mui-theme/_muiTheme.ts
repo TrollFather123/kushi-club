@@ -31,7 +31,7 @@ export const MuiThemeOptions = (mode: PaletteMode): ThemeOptions => {
         }
       },
       h2: {
-        fontSize: "48px",
+        fontSize: "3rem",
         lineHeight: "1.1em",
         fontWeight: "700",
         fontFamily: "bisonbold",
@@ -61,7 +61,7 @@ export const MuiThemeOptions = (mode: PaletteMode): ThemeOptions => {
         }
       },
       h5: {
-        fontSize: "18px",
+        fontSize: "1.25rem",
         lineHeight: "1.4",
         fontWeight: "500",
         fontFamily: "bisonbold",
@@ -81,7 +81,7 @@ export const MuiThemeOptions = (mode: PaletteMode): ThemeOptions => {
         }
       },
       body1: {
-        fontSize: "15px",
+        fontSize: "1rem",
         lineHeight: "1.5em",
         color: primaryColors?.textPrimaryColor,
         fontWeight: 500
@@ -302,11 +302,10 @@ export const MuiThemeOptions = (mode: PaletteMode): ThemeOptions => {
             ) {
               return {
                 backgroundColor: primaryColors?.buttonSecondary,
-                color: primaryColors?.textPrimaryColor,
-                border: `1px solid ${primaryColors?.buttonSecondary}`,
+                color: primaryColors?.white,
                 borderRadius: "5px",
                 "&:hover": {
-                  background: primaryColors?.primary1,
+                  background: primaryColors?.primary,
                   color: primaryColors?.white
                 }
               };

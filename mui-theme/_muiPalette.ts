@@ -49,7 +49,7 @@ export const primaryColors = {
   tableshadow: "rgba(7, 7, 7, 0.06)",
   secondaryFont: "#4D4E4E",
   tertiaryFont: "#585858",
-  buttonSecondary: "rgba(30, 30, 30, 0.15)",
+  buttonSecondary: "#f47b21",
   shadowPrimary: "rgba(27, 29, 78, 0.23)",
   ratingButtonTxt: "rgba(255, 255, 255, 0.60)",
   shippedText: "rgba(54, 27, 100, 0.16)",
@@ -124,7 +124,8 @@ export const primaryColors = {
   checkBlackColor: "#1F2B37",
   colorF9F9F9: "#F9F9F9",
   btnYlwColor: "#f7e910",
-  cardbg: "rgb(240, 248, 255)"
+  cardbg: "rgb(240, 248, 255)",
+  color007bff:"#007bff"
 };
 
 export const pallete = (mode: PaletteMode): PaletteOptions => {

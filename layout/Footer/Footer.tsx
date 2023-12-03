@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import assest from "@/json/assest";
 import styled from "@emotion/styled";
 import Image from "next/image";
@@ -5,155 +6,184 @@ import React from "react";
 import Container from "@mui/material/Container";
 import { Box } from "@mui/system";
 import Link from "next/link";
-import { List, ListItem } from "@mui/material";
-import path from "path";
+import { List, ListItem, Grid, Typography, Stack } from "@mui/material";
+
 import { useRouter } from "next/router";
+import { primaryColors } from "@/themes/_muiPalette";
 
 const FooterWrap = styled(Box)`
-  padding: 45px 0;
-  .ftr-list {
-    display: flex;
-    align-items: center;
-    padding: 0;
-    @media (max-width: 1199px) {
-      justify-content: center;
-      margin: 8px 0;
-      flex-wrap: wrap;
+  background-image: url(${assest.footer_bg});
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  padding: 90px 0 150px 0;
+  .ftr_inr {
+    p {
+      font-size: 1.25rem;
+      color: ${primaryColors.primary};
+      margin-bottom: 1rem;
+      font-weight: 700;
     }
+  }
+  .ftr_list {
     li {
-      width: auto;
-      margin-right: 35px;
-      @media (max-width: 899px) {
-        margin: 0 17px;
-      }
-      &:last-child {
-        margin-right: 0;
-
-        @media (max-width: 899px) {
-          margin-right: 17px;
-        }
-      }
+      font-size: 1rem;
+      font-weight: 300;
       a {
-        font-weight: 400;
-        font-size: 15px;
-        color: var(--color3A4950);
-        text-transform: capitalize;
-        &:hover {
-          color: var(--black);
-        }
-        &.active{
-          color: var(--black);
-        }
+        color: ${primaryColors.textPrimaryColor};
+        line-height: 200%;
       }
     }
   }
-  .ftr-logo {
-    margin-right: 28px;
-    line-height: 0;
-    @media (max-width: 1199px) {
-      max-width: 180px;
-      margin: 0 auto;
-    }
-  }
-  .social-list {
+  .social {
     display: flex;
     align-items: center;
-    padding: 0;
-    margin-left: 50px;
-    @media (max-width: 1199px) {
-      justify-content: center;
-      margin-left: 0px;
-      margin-bottom: 15px;
-    }
     li {
       width: auto;
-      margin-right: 20px;
-      
+      margin-right: 5px;
       &:last-child {
         margin-right: 0;
       }
-      img {
-        &:hover {
-          filter: brightness(0);
-        }
-        @media (max-width: 991px) {
-          width: 20px;
-          height: 20px;
-        }
-      }
     }
   }
-
-  .copy {
-    margin-left: auto;
-
-    font-size: 14px;
-    color: var(--color3A4950);
-
-    a {
-      color: var(--color3A4950);
-      &:hover {
-        color: var(--black);
-      }
-    }
+  .app_title {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
   }
   .ftr-wrapper {
-    display: flex;
-    align-items: center;
-    @media (max-width: 1199px) {
-      display: block;
-      text-align: center;
+    padding-bottom: 3rem;
+    border-bottom: 4px solid ${primaryColors.color007bff};
+  }
+  .btm_rgt {
+    p {
+      font-weight: 300;
+      a {
+        display: inline-block;
+        color: ${primaryColors.color007bff};
+        &:first-child {
+          margin-left: 16px;
+        }
+      }
     }
+  }
+  .ftr_btm {
+    padding-top: 48px;
   }
 `;
 
 const navItems = [
   {
     name: "home",
-    route: "/",
+    route: "/"
   },
   {
     name: "About",
-    route: "/about",
+    route: "/about"
   },
   {
     name: "Products",
-    route: "/products",
+    route: "/products"
   },
   {
     name: "Package",
-    route: "/package",
+    route: "/package"
   },
   {
     name: "Contact",
-    route: "/contact",
-  },
+    route: "/contact"
+  }
 ];
-
-
 
 const Footer = () => {
   const navItems = [
     {
-      name: "home",
-      route: "/",
+      name: "League Management",
+      route: "/"
     },
+    {
+      name: "Live Scoring App",
+      route: "/about"
+    },
+    {
+      name: "Live Stream",
+      route: "/products"
+    },
+    {
+      name: "Custom Apparel",
+      route: "/package"
+    },
+    {
+      name: "Scoreboard",
+      route: "/contact"
+    },
+    {
+      name: "Academy Management",
+      route: "/contact"
+    }
+  ];
+  const navItems2 = [
+    {
+      name: "Scoring Guide",
+      route: "/"
+    },
+    {
+      name: "Rank Calculator",
+      route: "/about"
+    },
+    {
+      name: "Videos",
+      route: "/products"
+    },
+    {
+      name: "FAQs",
+      route: "/package"
+    }
+  ];
+  const navItems3 = [
     {
       name: "About",
-      route: "/about",
+      route: "/"
     },
     {
-      name: "Products",
-      route: "/products",
+      name: "Media",
+      route: "/about"
     },
     {
-      name: "Package",
-      route: "/package",
+      name: "Career",
+      route: "/products"
     },
     {
       name: "Contact",
-      route: "/contact",
+      route: "/package"
+    }
+  ];
+  const navItems4 = [
+    {
+      name: "Blogs",
+      route: "/"
     },
+    {
+      name: "Match Centre",
+      route: "/about"
+    }
+  ];
+  const SocialIcons = [
+    {
+      image: `${assest.social_icon1}`,
+      path: "/"
+    },
+    {
+      image: `${assest.social_icon2}`,
+      path: "/"
+    },
+    {
+      image: `${assest.social_icon3}`,
+      path: "/"
+    },
+    {
+      image: `${assest.social_icon4}`,
+      path: "/"
+    }
   ];
   const router = useRouter();
   return (
@@ -161,23 +191,117 @@ const Footer = () => {
       <FooterWrap>
         <Container fixed>
           <Box className="ftr-wrapper">
-            <Link href="/" className="ftr-logo">
-              <Image src={assest.logo_img} alt="" width={210} height={34} />
-            </Link>
-
-            <List className="ftr-list">
-              {navItems.map((item: any, index: number) => (
-                <ListItem disablePadding>
-                  <Link href={item?.route} key={item.name} className={router.pathname === item.route ? "active" : ""}>
-                    {item?.name}
-                  </Link>
-                </ListItem>
-              ))}
-            </List>
- 
-            <Box className="copy">
-              © 2023 <Link href="/">Career Utility.</Link> All Rights Reserved.
-            </Box>
+            <Grid container spacing={2}>
+              <Grid xs={12} item md={2.4}>
+                <Box className="ftr_inr">
+                  <Typography variant="body1">PRODUCTS</Typography>
+                  <List disablePadding className="ftr_list">
+                    {navItems.map((data) => (
+                      <ListItem disablePadding>
+                        <Link href={data.route}>{data.name}</Link>
+                      </ListItem>
+                    ))}
+                  </List>
+                </Box>
+              </Grid>
+              <Grid xs={12} item md={2.4}>
+                <Box className="ftr_inr">
+                  <Typography variant="body1">RESOURCES</Typography>
+                  <List disablePadding className="ftr_list">
+                    {navItems2.map((data) => (
+                      <ListItem disablePadding>
+                        <Link href={data.route}>{data.name}</Link>
+                      </ListItem>
+                    ))}
+                  </List>
+                </Box>
+              </Grid>
+              <Grid xs={12} item md={2.4}>
+                <Box className="ftr_inr">
+                  <Typography variant="body1">COMPANY</Typography>
+                  <List disablePadding className="ftr_list">
+                    {navItems3.map((data) => (
+                      <ListItem disablePadding>
+                        <Link href={data.route}>{data.name}</Link>
+                      </ListItem>
+                    ))}
+                  </List>
+                </Box>
+              </Grid>
+              <Grid xs={12} item md={2.4}>
+                <Box className="ftr_inr">
+                  <Typography variant="body1">MORE</Typography>
+                  <List disablePadding className="ftr_list">
+                    {navItems4.map((data) => (
+                      <ListItem disablePadding>
+                        <Link href={data.route}>{data.name}</Link>
+                      </ListItem>
+                    ))}
+                  </List>
+                </Box>
+              </Grid>
+              <Grid xs={12} item md={2.4}>
+                <Box className="ftr_inr">
+                  <Typography variant="body1">FOLLOW US</Typography>
+                  <List disablePadding className="social">
+                    {SocialIcons.map((data) => (
+                      <ListItem disablePadding>
+                        <Link href={data.path}>
+                          <Image
+                            alt=""
+                            src={data.image}
+                            width={30}
+                            height={30}
+                          />
+                        </Link>
+                      </ListItem>
+                    ))}
+                  </List>
+                  <Typography variant="body1" className="app_title">
+                    DOWNLOAD APP
+                  </Typography>
+                  <Box className="app">
+                    <Link href="/">
+                      <Image
+                        alt=""
+                        src={assest.app_image1}
+                        width={152}
+                        height={57}
+                      />
+                    </Link>
+                  </Box>
+                  <Box className="app">
+                    <Link href="/">
+                      <Image
+                        alt=""
+                        src={assest.app_image2}
+                        width={152}
+                        height={57}
+                      />
+                    </Link>
+                  </Box>
+                </Box>
+              </Grid>
+            </Grid>
+          </Box>
+          <Box className="ftr_btm">
+            <Stack
+              alignItems="center"
+              justifyContent="space-between"
+              flexWrap="wrap"
+              direction="row"
+            >
+              <Link href="/">
+                <Image src={assest.ftr_logo} alt="" width={177} height={35} />
+              </Link>
+              <Box className="btm_rgt">
+                <Typography variant="body1">
+                  © Copyright 2023 CricClubs.com. All rights reserved.{" "}
+                  <Link href="/">Terms</Link> |{" "}
+                  <Link href="/">Privacy Policy</Link>
+                </Typography>
+              </Box>
+            </Stack>
           </Box>
         </Container>
       </FooterWrap>

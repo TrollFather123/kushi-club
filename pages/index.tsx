@@ -1,4 +1,8 @@
 import Banner from "@/components/Banner/Banner";
+import BrandsSec from "@/components/BrandsSec/BrandsSec";
+import ClinetsSec from "@/components/ClinetsSec/ClinetsSec";
+import CountrySec from "@/components/CountrySec/CountrySec";
+import PeopleSec from "@/components/PeopleSec/PeopleSec";
 import ProductSec from "@/components/ProductSec/ProductSec";
 import assest from "@/json/assest";
 import { searchList } from "@/json/mock/search.mock";
@@ -51,6 +55,10 @@ export default function Home() {
         </Box>
       </Banner>
       <ProductSec />
+      <CountrySec />
+      <ClinetsSec />
+      <BrandsSec />
+      <PeopleSec />
     </Wrapper>
   );
 }

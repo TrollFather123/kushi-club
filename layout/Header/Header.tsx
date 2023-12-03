@@ -1,3 +1,4 @@
+/* eslint-disable mui-path-imports/mui-path-imports */
 /* eslint-disable no-unused-vars */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable react/no-unused-prop-types */
@@ -27,6 +28,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { Button } from "@mui/material";
+
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -41,11 +44,39 @@ export default function Header(props: Props) {
   const navItems = [
     {
       name: "Products",
-      route: "/product"
+      route: "/product",
+      submenu: [
+        {
+          linkName: " League Management ",
+          path: "/"
+        },
+        {
+          linkName: "  Live Stream ",
+          path: "/"
+        },
+        {
+          linkName: " League Management ",
+          path: "/"
+        }
+      ]
     },
     {
       name: "Resources",
-      route: "/resource"
+      route: "/resource",
+      submenu: [
+        {
+          linkName: " League Management ",
+          path: "/"
+        },
+        {
+          linkName: "  Live Stream ",
+          path: "/"
+        },
+        {
+          linkName: " League Management ",
+          path: "/"
+        }
+      ]
     },
     {
       name: "Company",
@@ -161,16 +192,26 @@ export default function Header(props: Props) {
                 className="navbar"
               >
                 {navItems.map((item, index) => (
-                  <Link
-                    href={item?.route}
+                  <Button
+                    disableRipple
                     // eslint-disable-next-line react/no-array-index-key
                     key={index}
                     className={router.pathname === item.route ? "active" : ""}
                   >
-                    {/* <CustomButton type="button" variant="text"> */}
                     {item?.name}
-                    {/* </CustomButton> */}
-                  </Link>
+                    {index !== 3 && (
+                      <Box
+                        className={
+                          index !== 0 ? "menu-ddown slim" : "menu-ddown"
+                        }
+                      >
+                        {item.submenu !== undefined &&
+                          item.submenu.map((data) => (
+                            <Link href={data.path}>{data.linkName}</Link>
+                          ))}
+                      </Box>
+                    )}
+                  </Button>
                 ))}
               </Box>
             )}

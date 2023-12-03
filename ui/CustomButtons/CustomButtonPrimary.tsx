@@ -8,6 +8,12 @@ const CustomButtonWrapper = styled(Button)`
   min-width: auto;
   justify-content: center;
   align-items: center;
+  &.MuiButton-containedSecondary {
+    padding: 11px 50px;
+    span {
+      color: ${primaryColors?.white};
+    }
+  }
   &.signUpButton {
     width: 100%;
     padding: 23px 0;
