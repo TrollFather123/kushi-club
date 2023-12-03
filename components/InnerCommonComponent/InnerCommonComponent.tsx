@@ -1,6 +1,5 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable import/order */
-import styled from "@emotion/styled";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import React from "react";
@@ -10,6 +9,8 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Image from "next/image";
 import Container from "@mui/material/Container";
+import Paper from "@mui/material/Paper";
+import { InnerCommonComponentWrap } from "@/styles/StyledComponents/InnerCommonComponentWrap";
 
 type tablistType = {
   icon: string;
@@ -41,8 +42,8 @@ function CustomTabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+        <Box>
+         {children}
         </Box>
       )}
     </div>
@@ -56,7 +57,7 @@ function a11yProps(index: number) {
   };
 }
 
-export const InnerCommonComponentWrap = styled(Box)``;
+
 
 export default function InnerCommonComponent({
   designtitle,
@@ -70,12 +71,12 @@ export default function InnerCommonComponent({
   };
   return (
     <InnerCommonComponentWrap className="cmn_gap">
-      <DesignTitle title={designtitle!} fontsColor={primaryColors?.black}>
+      <DesignTitle title={designtitle!} fontsColor={primaryColors?.black} >
         <Typography>{titleDescription}</Typography>
       </DesignTitle>
       <Container fixed>
-        <Box className="tab_sec">
-          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Box className="tab_sec" >
+          <Box component={Paper} className="tab_top_wrap">
             <Tabs
               value={value}
               onChange={handleChange}

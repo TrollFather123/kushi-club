@@ -1,10 +1,39 @@
 /* eslint-disable mui-path-imports/mui-path-imports */
+import { primaryColors } from "@/themes/_muiPalette";
 import styled from "@emotion/styled";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
-export const TabBodyContentWrapper = styled(Box)``;
+export const TabBodyContentWrapper = styled(Box)`
+  .main_title {
+    text-align: right;
+    h2 {
+        color: ${primaryColors?.black};
+      font-size: 2rem;
+      max-width: 248px;
+      margin-left: auto;
+    }
+    .heading-divider {
+      display: inline-block;
+      border: 0;
+      border-top: 3px solid #f47b21;
+      height: 0;
+      width: 60px;
+      margin-left: auto;
+      margin-bottom: 1.5rem;
+      margin-top: 1rem;
+    }
+    p {
+      text-align: justify;
+      font-weight: 300;
+      color: ${primaryColors?.black};
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+`;
 
 interface tabContentProps {
   mainImage: string;
@@ -40,7 +69,7 @@ export default function TabBodyContent({
           <Box className="tab_content">
             <Box className="main_title">
               <Typography variant="h2">{title}</Typography>
-              <hr className="heading-divider mb-4"/>
+              <hr className="heading-divider mb-4" />
               {children}
             </Box>
           </Box>

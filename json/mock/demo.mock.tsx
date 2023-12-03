@@ -85,5 +85,123 @@ export const tabContentList = [
         </Typography>
       </TabBodyContent>
     )
-  }
+  },
+  {
+    icon: assest?.tab1,
+    tabLabel: "Dashboard",
+    tabBodyComponent: (
+      <TabBodyContent
+        mainImage={assest?.tab_main_img1}
+        imageHeight={1200}
+        imageWidth={900}
+        title="League Dashboard
+        Home Page"
+      >
+        <Typography>
+          CricClubs league management solution provides all the tools necessary
+          for Cricket administrators to manage their league with ease. With an
+          instant league website, 5-minute tournament setup, match center,
+          automatic points table, comprehensive statistics, mobile app, News,
+          Picture Gallery, Social media integrations and much more, CricClubs
+          puts technology at your fingertips!
+        </Typography>
+        <Typography>
+          A comprehensive dashboard which gives the full flexibility to manage
+          your whole league. You can access the dashboard via control panel and
+          explore the plethora of options for your league. Many salient features
+          like series, matches, players, schedule, media and much more are
+          available at your fingertips for smooth operation. Dashboard is a
+          highly usable feature for a league admin where all the features are
+          available upfront without much effort of finding. A full cockpit view
+          of the features including pricing and billing are available at one
+          glance.
+        </Typography>
+      </TabBodyContent>
+    )
+  },
+  {
+    icon: assest?.tab2,
+    tabLabel: "Themes",
+    tabBodyComponent: (
+      <TabBodyContent
+        mainImage={assest?.tab_main_img2}
+        imageHeight={521}
+        imageWidth={548}
+        title="Themes"
+      >
+        <Typography>
+          Whether you are an established brand or you are just trying to set up
+          your first league, our platform gives you options to choose the best
+          look and feel for your league. You can make your league look the way
+          you want with options to choose colours, skin and also upload your own
+          logo. Using our e-commerce store you can pick the right apparel to
+          suit the theme of your league portal. We are exclusively giving our
+          premium users with 10 different theme options to choose from. Applying
+          a theme is a very simple and intuitive process. Once you login to your
+          admin panel you will see the option to customize and there you will be
+          provided with theme options. All you have to do is pick the right
+          theme and hit apply, that's it your brand is live
+        </Typography>
+      </TabBodyContent>
+    )
+  },
+  {
+    icon: assest?.tab1,
+    tabLabel: "Dashboard",
+    tabBodyComponent: (
+      <TabBodyContent
+        mainImage={assest?.tab_main_img1}
+        imageHeight={1200}
+        imageWidth={900}
+        title="League Dashboard
+        Home Page"
+      >
+        <Typography>
+          CricClubs league management solution provides all the tools necessary
+          for Cricket administrators to manage their league with ease. With an
+          instant league website, 5-minute tournament setup, match center,
+          automatic points table, comprehensive statistics, mobile app, News,
+          Picture Gallery, Social media integrations and much more, CricClubs
+          puts technology at your fingertips!
+        </Typography>
+        <Typography>
+          A comprehensive dashboard which gives the full flexibility to manage
+          your whole league. You can access the dashboard via control panel and
+          explore the plethora of options for your league. Many salient features
+          like series, matches, players, schedule, media and much more are
+          available at your fingertips for smooth operation. Dashboard is a
+          highly usable feature for a league admin where all the features are
+          available upfront without much effort of finding. A full cockpit view
+          of the features including pricing and billing are available at one
+          glance.
+        </Typography>
+      </TabBodyContent>
+    )
+  },
+  {
+    icon: assest?.tab2,
+    tabLabel: "Themes",
+    tabBodyComponent: (
+      <TabBodyContent
+        mainImage={assest?.tab_main_img2}
+        imageHeight={521}
+        imageWidth={548}
+        title="Themes"
+      >
+        <Typography>
+          Whether you are an established brand or you are just trying to set up
+          your first league, our platform gives you options to choose the best
+          look and feel for your league. You can make your league look the way
+          you want with options to choose colours, skin and also upload your own
+          logo. Using our e-commerce store you can pick the right apparel to
+          suit the theme of your league portal. We are exclusively giving our
+          premium users with 10 different theme options to choose from. Applying
+          a theme is a very simple and intuitive process. Once you login to your
+          admin panel you will see the option to customize and there you will be
+          provided with theme options. All you have to do is pick the right
+          theme and hit apply, that's it your brand is live
+        </Typography>
+      </TabBodyContent>
+    )
+  },
 ];
